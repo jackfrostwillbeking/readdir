@@ -1,0 +1,31 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <title>thumbnail test page</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="/assets/files/jquery.js"></script>
+    <script src="main.js"></script>
+    <script src="mouseover.js"></script>
+  </head>
+  <body>
+
+    <div class="images_area">
+
+      <h1>thumbnail test page</h1>
+
+      <ul class="thumb">
+          <li v-for="item in items">
+               <a :href=item><img v-bind:src=item></a>
+          </li>
+      </ul>
+
+      <ul class="top">
+          <li v-for="item in items">
+              <a :href=item><img v-bind:src=item></a>
+         </li>
+      </ul>
+
+    </div>
+
+  </body>
+</html>

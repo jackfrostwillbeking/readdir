@@ -1,9 +1,12 @@
 const Vue = require('vue')
-const server = require('express')()
+// const server = require('express')()
+const express = require('express');
+const app = express();
 const renderer = require('vue-server-renderer').createRenderer()
 var list = require("./readdir.js");
+app.use("/", express.static('./'));
 
-server.get('*', (req, res) => {
+app.get('*', (req, res) => {
 //  console.log(list.readdir("./"));
   const app = new Vue({
     data: {
@@ -14,13 +17,11 @@ server.get('*', (req, res) => {
       //{ message: 'Bar' }
     //] 
     },
-    template: require('fs').readFileSync('./template.html', 'utf-8')
+    template: require('fs').readFileSync('./index.html', 'utf-8')
   })
-
-renderer.renderToString(app, (err, html) => {
+  renderer.renderToString(app, (err, html) => {
   res.send(html) // will be the full page with app content injected.
   //console.log(html) // will be the full page with app content injected.
 })
 });
-server.listen(8080)
-
+app.listen(8080)

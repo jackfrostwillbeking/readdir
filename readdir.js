@@ -1,6 +1,6 @@
 const fs = require('fs');
 //TODO ファイル名用パラメータを変数に入れたいができない
-const search_list = ".js$|.html$";
+const search_list = ".png$|.jpg$";
 console.log('module load!');
 
 //ファイル一覧取得関数
@@ -13,7 +13,7 @@ var readdir = function(dir) {
     var result = files.filter( function( value ) {
         //特定の拡張子を含むものだけ抽出
         //return value.match( /search_list/g );
-        return value.match( /.js$|.html$/g );
+        return value.match( /.png$|.jpg$/g );
     })
     //呼び出し用にexportする
     exports.result = result;

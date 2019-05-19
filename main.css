@@ -1,0 +1,66 @@
+@charset "UTF-8";
+
+body {
+  background-color: #FED;
+}
+
+h1 {
+  color: #630;
+  font-family: serif;
+  text-align: center;![sample.gif](https://qiita-image-store.s3.amazonaws.com/0/142313/8c13cc7f-8aa6-2236-ad70-e49d6785700d.gif)
+
+}
+
+.images_area {
+  margin: 0 auto;
+  overflow: hidden;/*float属性使用時、overflow属性を使用し、要素の横並べで起こりうるバグを未然に防ぐ*/
+  width: 640px;
+}
+
+.thumb {
+  float: left;
+  list-style-type: none;/*リスト項目の点を消す場合は、list-style-typeという属性を使用し、値として「none」を指定します。*/
+  margin: 0;
+  overflow: hidden;
+  width: 300px;
+}
+
+.thumb li {
+  cursor: pointer;
+  float: left;
+  padding: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+
+.thumb li:hover {
+  opacity: 0.8;
+}
+
+.thumb img {
+  height: 145px;
+  padding: 0;
+  vertical-align: bottom;
+  width: 145px;
+}
+
+.top {
+  float: left;
+  height: 295px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 295px;
+}
+
+.top img {
+  height: 295px;
+  width: 295px;
+}
+
+.top img:nth-child(2),/*要素指定（1番目の要素を指定する場合は"first-child"で指定する事も出来ます。） */
+.top img:nth-child(3),
+.top img:nth-child(4) {
+  display: none;/*要素を隠す方法の一つとして、display属性があります。
+                  このdisplay属性の値を「none」に指定することで要素は見えなくなります。*/
+}

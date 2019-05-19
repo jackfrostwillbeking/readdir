@@ -5,9 +5,18 @@
     <div>The visited URL is: {{ url }}</div>
 <ul>
 <!--<ul id="example-1">-->
-  <li v-for="item in items">
-    {{ item }}
-  </li>
+  <!-- <li v-for="item in items"> -->
+      <script type="text/javascript">
+          var path= location.pathname;
+          document.write(path+'/');
+      </script>
+      <!-- <a href="http://localhost:8080/"{{ url }}{{ item }}> -->
+        <a href="me.jpg"><img src="me.jpg" width="225" height="127"></a>
+
+      <!-- <a v-bind:href="url+'/'+item"> -->
+          <!-- <a v-bind:href="item"> -->
+              <!-- <img src="http://localhost:8080/" width="225" height="127"></a> -->
+            <!-- </li> -->
 </ul>
   </body>
 </html>
